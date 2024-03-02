@@ -33,7 +33,7 @@
   
   .image-container {
     width: 500px;
-    height: 100%; /* Set the desired height for the image */
+    height: 100%; 
     margin-right: 40px;
     overflow: hidden;
   }
@@ -41,8 +41,8 @@
   .school-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Enlarge the image to cover the container */
-    object-position: center; /* Center the image within the container */
+    object-fit: cover; 
+    object-position: center; 
   }
   
   .school-name {
@@ -54,3 +54,6 @@
     font-size: 1rem;
   }
   
+  .wrapper {
+    width: 670px;
+  }

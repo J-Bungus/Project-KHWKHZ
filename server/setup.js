@@ -1,17 +1,9 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const fs = require('fs');
 
-const cert = fs.readFileSync('./DigiCertGlobalRootCA.crt.pem');
 const sequelize = new Sequelize(process.env.PGDATABASE, process.env.PGUSER, process.env.PGPASSWORD, {
     host: process.env.PGHOST,
-    dialect: 'postgres',
-    dialectOptions: {
-        ssl: {
-            require: true,
-            rejectAuthorization: false,
-            ca: cert
-        }
-    }
+    dialect: 'postgres'
 });
 
 const Schools = sequelize.define('Schools', {
@@ -25,11 +17,11 @@ const Schools = sequelize.define('Schools', {
         allowNull: false
     },
     about: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
     },
     blobURL: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true
     }
 });

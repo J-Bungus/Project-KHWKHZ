@@ -5,16 +5,32 @@
   
   .title {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
   }
   
   .create-form {
     display: flex;
     flex-direction: column;
   }
-  
-  .input-field {
+
+  .section {
+    display: flex;
+  }
+
+  .name-field {
+    margin-left: 100px;
     margin-bottom: 20px;
+    width: 40%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .input-field {
+    margin-left: 100px;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 180px;
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -23,9 +39,12 @@
   
   .input-file {
     margin-bottom: 20px;
+    margin-left: 100px;
   }
   
   .submit-button {
+    width: 100px;
+    justify-content: right;
     padding: 10px 20px;
     font-size: 1rem;
     background-color: #007bff;
