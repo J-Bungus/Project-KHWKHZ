@@ -1,0 +1,56 @@
+/* src/components/HomePage.css */
+.homepage {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .create-link {
+    display: block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .school-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .school-card {
+    display: flex;
+    height: 150px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .image-container {
+    width: 500px;
+    height: 100%; /* Set the desired height for the image */
+    margin-right: 40px;
+    overflow: hidden;
+  }
+  
+  .school-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Enlarge the image to cover the container */
+    object-position: center; /* Center the image within the container */
+  }
+  
+  .school-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .school-description {
+    font-size: 1rem;
+  }
+  

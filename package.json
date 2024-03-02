@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "proxy": "http://localhost:3000",
   "scripts": {
     "start": "npm run server",
-    "server": "nodemon app.js",
-    "client": "npm start"
+    "server": "cd server && nodemon app.js",
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "",
