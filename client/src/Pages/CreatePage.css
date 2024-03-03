@@ -57,4 +57,21 @@
   .submit-button:hover {
     background-color: #0056b3;
   }
+
+  .image-section {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100px;
+    max-height: 100px;
+  }
   
+  .image {
+    max-height: 100px;
+    width: auto;
+  }

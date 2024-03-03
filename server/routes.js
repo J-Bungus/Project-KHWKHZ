@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const { addSchool, getSchools } = require('./query');
+const { addSchool, getSchools, updateSchool, deleteBlob, addBlob } = require('./query');
 
 const router = express.Router();
 const storage = multer.memoryStorage()
@@ -39,6 +39,31 @@ router.get('/getSchools', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: 'Internal server error' });
     }
-})
+});
+
+router.post('/updateSchool', upload.single('image'), async (req, res) => {
+    try {
+        const { id, name, about } = req.body;
+        let blobURL = req.body.blobURL;
+        let blobName = req.body.blobName;
+        if (req.file) {
+            const { filename, buffer } = req.file;
+            deleteBlob(id);
+            [ blobURL, blobName ] = await addBlob({ filename: filename, image: buffer });
+        }
+
+        const updatedSchool = await updateSchool({
+            id: id,
+            name: name,
+            about: about,
+            blobName: blobName,
+            blobURL: blobURL
+        });
+
+        res.status(201).json(updatedSchool);
+    } catch (err) {
+        res.status(500).json({ error: 'Internal server error while updating school: ' + err});
+    }
+});
 
 module.exports = router;

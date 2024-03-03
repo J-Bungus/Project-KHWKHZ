@@ -27,12 +27,14 @@ const HomePage = () => {
       <Link to="/create" className="create-link">
         <button>Create a Listing</button>
       </Link>
-      <div className="school-list">
-        {!schoolList ? <div>Welcome! To add listings click the "Create a Listing" button.</div> : schoolList.map((school, index) => (
-          <SchoolPanel key={index} school={school}>
-             <img src={school.blobURL} alt={school.name} className="school-image"/>
-          </SchoolPanel>
-        ))}
+      <div className="center">
+        <div className="school-list">
+          {!schoolList ? <div>Welcome! To add listings click the "Create a Listing" button.</div> : schoolList.map((school, index) => (
+            <SchoolPanel key={index} school={school}>
+              <img src={school.blobURL} alt={school.name} className="school-image"/>
+            </SchoolPanel>
+          ))}
+        </div>
       </div>
     </div>
   );
