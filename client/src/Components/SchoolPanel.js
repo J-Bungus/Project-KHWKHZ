@@ -17,7 +17,7 @@ export default function SchoolPanel({ children, school}) {
             <div className="school-info">
                 <h2 className="school-name">{school.name}</h2>
                 <div className='wrapper'>
-                    <div className="school-description">{isExpanded ? school.about : (school.about.slice(0, Math.max(Math.round(school.about.length * 0.4), 100)) + '...')}</div>
+                    <p className="school-description">{isExpanded ? school.about : (school.about.slice(0, Math.max(Math.round(school.about.length * 0.4), 100)) + '...')}</p>
                 </div>
             </div>
             <div className="edit-button">

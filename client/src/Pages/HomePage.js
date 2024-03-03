@@ -23,12 +23,15 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <h1 className="title">Home</h1>
-      <Link to="/create" className="create-link">
-        <button>Create a Listing</button>
-      </Link>
       <div className="center">
         <div className="school-list">
+          <div className="title-wrapper">
+            <h1 className="title">Home</h1>
+            <div className="filler"/>
+            <Link to="/create" className="create-link">
+              <button className="button">Create a Listing</button>
+            </Link>
+          </div>
           {!schoolList ? <div>Welcome! To add listings click the "Create a Listing" button.</div> : schoolList.map((school, index) => (
             <SchoolPanel key={index} school={school}>
               <img src={school.blobURL} alt={school.name} className="school-image"/>
